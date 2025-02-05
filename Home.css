@@ -1,0 +1,388 @@
+/* Global box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    /* Use min-height instead of fixed height so that content can expand */
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    width: 100%; 
+    min-height: 100vh;
+    margin: 0; 
+    background: linear-gradient(45deg, #000000, #135f53, #1b2d39, #0c1b3f, #045057);
+    animation: Animategb 15s ease infinite;
+    background-size: 400% 400%;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+  }
+  
+  @keyframes Animategb {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 100%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 0%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .Header1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(Img/city.gif); 
+    width: 100vw; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    color: aliceblue;
+    background-size: cover;
+    background-position: 20%;
+    height: 150px;
+  }
+  
+  .Header1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(Img/city.gif);
+    background-size: cover;
+    opacity: 0.1;
+    z-index: -1;
+  }
+  
+  .Header1 h1 {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    z-index: 1;
+    color: #fff;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    background-size: 200% 200%;
+    mix-blend-mode: screen;
+    margin-bottom: 60px;
+  }
+  
+  .Header1 h1:hover {
+    animation: glow 1.5s infinite alternate;
+  }
+  
+  @keyframes glow {
+    0% {
+      text-shadow: 
+        0 0 5px #08c1ff,
+        0 0 10px #fff,
+        0 0 15px #fff,
+        0 0 20px #00ffcc,
+        0 0 30px #00ffcc,
+        0 0 40px #00ffcc,
+        0 0 40px #00ffcc,
+        0 0 40px #00ffcc;
+    }
+    25% {
+      text-shadow: 
+        0 0 5px #08c1ff,
+        0 0 10px #fff,
+        0 0 15px #fff,
+        0 0 20px #00ffcc,
+        0 0 30px #00ffcc,
+        0 0 40px #00ffcc,
+        0 0 40px #00ffcc,
+        0 0 40px #00ffcc;
+    }
+    50% {
+      text-shadow: 
+        0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 30px #fff,
+        0 0 40px #00ffcc,
+        0 0 40px #00ffcc,
+        0 0 40px #00ffcc,
+        0 0 40px #00ffcc,
+        0 0 40px #00ffcc;
+    }
+    75% {
+      text-shadow: 
+        0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 30px #fff,
+        0 0 40px #00ffcc,
+        0 0 40px #00ffcc,
+        0 0 40px #00ffcc,
+        0 0 40px #00ffcc,
+        0 0 40px #00ffcc;
+    }
+    100% {
+      text-shadow: 
+        0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 30px #fff,
+        0 0 40px #00ffcc,
+        0 0 40px #00ffcc,
+        0 0 40px #00ffcc,
+        0 0 40px #00ffcc,
+        0 0 40px #00ffcc;
+    }
+  }
+  
+  .topbuttons {
+    display: flex;
+    justify-content: flex-end; 
+    width: 100%;
+    position: absolute;
+    top: -12px; 
+    right: 45px;
+  }
+  
+  .h51, .h52 {
+    border: 2px solid rgb(213, 82, 0, 0.6);
+    padding: 3px;
+    background-color: rgba(240, 248, 255, 0.45);
+    border-radius: 25px;
+    color: rgba(0, 0, 0, 0.77);
+    margin-left: 3px; 
+  }
+  
+  .topbuttons a {
+    text-decoration: none;
+    color: rgb(59, 63, 67);
+  }
+  
+  .topnav {
+    display: flex;
+    justify-content: center; 
+    width: 100%;
+    position: absolute;
+    bottom: 10px; 
+  }
+  
+  .dropdown {
+    position: relative;
+    display: flex;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(22, 21, 42, 0.75);
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: aliceblue;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: rgba(13, 22, 56, 0.75);
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .h61, .h62, .h63 {
+    border: 2px solid #045057;
+    background-color: rgba(33, 34, 34, 0.8);
+    padding: 7.5px;
+    margin: 0 10px; 
+    color: aliceblue;
+  }
+  
+  nav {
+    background: rgba(183, 183, 183, 0.5);
+    padding: 10px;
+    position: absolute;
+    top: 18px;
+    left: 30px;
+    border-radius: 5%;
+    z-index: 10;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  nav:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                0 0 20px rgba(228, 160, 0, 0.8),
+                0 0 30px rgba(0, 123, 255, 0.8);
+  }
+  
+  #menu {
+    list-style: none;
+    padding: 0;
+    margin: 10px;
+    background: rgba(68, 68, 68, 0.75);
+    width: 200px;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    display: none;
+    border-radius: 5px;
+    color: aliceblue;
+  }
+  
+  .menu-icon {
+    font-size: 30px;
+    color: #000;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  #menu li {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  #menu li a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding-bottom: 10px;
+  }
+  
+  #menu li a:hover {
+    background: #8f8f8f;
+  }
+  
+  #menu.show {
+    display: block;
+  }
+  
+  .sections {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    margin-top: 250px; /* Adjust to start below the header */
+  }
+  
+  .section {
+    flex: 2;
+    margin: 0 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    color: rgb(253, 253, 253);
+  }
+  
+  .sidebar {
+    flex: 0.8;
+    margin-right: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    height: calc(100vh - 150px);
+    position: sticky;
+    top: 10px;
+    width: 70px;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .main-content {
+    margin-right: 40px;
+    background-color: rgba(218, 6, 6, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    min-height: 100vh;
+    /* The following two properties (top and width) seem intended for a horizontally scrolling layout */
+    top: 1900px;
+    width: 7000px;
+    overflow-y: auto;
+  }
+  
+  .gallery-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .gallery-item {
+    border: 3px solid #333;
+    padding: 10px;
+    background: white;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .gallery-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    border-bottom: 2px solid #333;
+  }
+  
+  @media (max-width: 1200px) {
+    .gallery {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .gallery {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gallery {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 10px;
+    }
+    .gallery-item {
+      padding: 5px;
+    }
+  }
+  
+  .gallery-button {
+    position: absolute;
+    top: 220px;
+    left: 70px;
+    border: 3px solid #020202;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: #1620235a;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .gallery-button a {
+    text-decoration: none;
+    color: antiquewhite;
+  }
+  
+  .gallery-button:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                0 0 20px rgba(228, 160, 0, 0.8),
+                0 0 30px rgba(0, 123, 255, 0.8);
+  }
+  
+  .game-details {
+    font-size: large;
+    text-align: justify;
+  }
+  

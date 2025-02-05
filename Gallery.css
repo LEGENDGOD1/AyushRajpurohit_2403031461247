@@ -1,0 +1,128 @@
+/* Global box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; /* Allow page expansion */
+    margin: 0;
+    background: linear-gradient(45deg, #000000, #135f53, #1b2d39, #0c1b3f, #045057);
+    animation: Animategb 15s ease infinite;
+    background-size: 100% 400%;
+  }
+  
+  /* Background animation keyframes */
+  @keyframes Animategb {
+    0% {
+      background-position: 0% 50%;
+    }
+    25% {
+      background-position: 50% 100%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    75% {
+      background-position: 50% 0%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Gallery Title */
+  .gallery-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive Gallery Container */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Gallery Item */
+  .gallery-item {
+    border: 3px solid #333;
+    padding: 10px;
+    background: white;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Hover effect for gallery items */
+  .gallery-item:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Gallery Item Image */
+  .gallery-item img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    border-bottom: 2px solid #333;
+  }
+  
+  /* Caption Styling */
+  .caption {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Home Button Container */
+  .home-button-container {
+    margin: 20px;
+  }
+  
+  /* Home Button Styling */
+  .home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .home-button:hover {
+    background: #555;
+    transform: scale(1.05);
+  }
+  
+  /* Media Query for medium screens */
+  @media (max-width: 768px) {
+    .gallery {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
+  
+  /* Media Query for small screens */
+  @media (max-width: 480px) {
+    .gallery {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 10px;
+    }
+  
+    .gallery-item {
+      padding: 5px;
+    }
+  }
+  

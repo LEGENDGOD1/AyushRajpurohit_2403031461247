@@ -1,0 +1,130 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+    margin: 0; 
+    background: linear-gradient(45deg, #ffffff, #135f53, #1b2d39, #0c1b3f, #045057);
+    animation: Animategb 15s ease infinite;
+    background-size: 100% 400%;
+}
+
+@keyframes Animategb {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 50% 100%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    75% {
+        background-position: 50% 0%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    border: 1px solid #0d2924; 
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    padding: 20px; 
+    background-image: url('Img/camp.gif'); 
+    background-size: cover; 
+    background-position: center; 
+    box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc; 
+}
+
+h1 {
+    color: #dfdfdf; 
+    text-shadow: 0 0 5px #3f6f66, 0 0 10px #066a56, 0 0 15px #00fffb; 
+}
+
+.user, .email {
+    color: #ffffff; 
+    border-radius: 20px;
+    padding: 10px 10px;
+    width: 100%;
+    background: rgba(41, 41, 41, 0.8); 
+    backdrop-filter: blur(10px); 
+    border: 1px solid #6a450e; 
+    margin-top: 20px;
+}
+
+.user:hover, .email:hover {
+    box-shadow: 0 0 1px #00ffcc, 0 0 2px #00ffcc, 0 0 3px #00ffcc; 
+}
+
+.user::placeholder, .email::placeholder {
+    color: #d1fffc; 
+    opacity: 1;
+    opacity: 60%;
+    
+}
+
+.Buttonz {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;
+}
+
+.Buttonz {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;
+}
+
+.Buttonz button {
+    background: linear-gradient(to left, #bfbdbd, #006fca);
+    color: white; 
+    cursor: pointer; 
+    border-radius: 20px;
+    margin-top: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;;
+    background-size: 400% 400%;
+}
+
+.Buttonz button:hover {
+    animation: ButtonFlow 3s linear infinite; 
+    box-shadow: 0 0 10px #5a887f, 0 0 2px #00ffcc, 0 0 2px #00ffcc; 
+    
+    animation: Buttonanimation 15s ease infinite; 
+    box-shadow: 0 0 10px #00ffcc, 0 0 2px #00ffcc, 0 0 2px #00ffcc; 
+}
+
+
+@keyframes Buttonanimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 50% 100%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    75% {
+        background-position: 50% 0%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.Buttonz button a {
+    color: rgb(0, 0, 0); 
+    text-decoration: none; 
+}
